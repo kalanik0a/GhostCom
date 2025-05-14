@@ -1,5 +1,4 @@
 #include "ghostcom/ghostcom.h"
-#include <windows.h>
 #include <stdio.h>
 #include <iostream>
 #include <string>
