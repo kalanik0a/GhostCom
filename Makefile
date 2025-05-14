@@ -4,7 +4,9 @@
 
 CXX := g++
 CXX_WIN := x86_64-w64-mingw32-g++.exe
-CXXFLAGS := -std=c++20 -Wall -Iinclude -static -static-libgcc -static-libstdc++ -static-libstdc++
+CXX_MAC := clang++
+CXXFLAGS_WIN := -std=c++20 -Wall -Iinclude -static -static-libgcc -static-libstdc++ -static-libstdc++
+CXXFLAGS_MAC := -std=c++20 -Wall -Wextra -g -Iinclude
 SRC_DIR := src
 OUT_WINDOWS := bin/win/ghostcom.exe
 OUT_LINUX := bin/linux/ghostcom
@@ -34,7 +36,7 @@ linux: $(OUT_LINUX)
 mac:
 	@mkdir -p bin bin/mac
 	echo "[macOS] Compiling GhostCom using clang..."
-	clang -Os -Wall $(GHOSTCOM_APPLICATION) -o bin/mac/ghostcom-mac -framework Security -framework CoreFoundation
+	$(CXX_MAC) $(CXXFLAGS_MAC) $(GHOSTCOM_APPLICATION) -o $(OUT_MAC) -framework Security -framework CoreFoundation
 
 clean:
 	echo "Cleaning build directory..."
