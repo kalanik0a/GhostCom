@@ -1,0 +1,19 @@
+{
+    "window.zoomLevel": -1,
+    "terminal.integrated.profiles.windows": {
+        "MSYS Bash": {
+            "path": "C:\\msys64\\usr\\bin\\bash.exe"
+        },
+        "Powershell": {
+            "path" : "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "MSYS Bash",
+    "terminal.integrated.shellArgs.windows": [
+        "-i"
+    ],
+    "C_Cpp.default.compileCommands": [
+        
+        ""
+    ]
+}

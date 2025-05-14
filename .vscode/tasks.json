@@ -1,24 +1,95 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe build active file",
-			"command": "C:/msys64/usr/bin/make.exe",
-			"args": [
-				"win"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"detail": "compiler: C:/msys64/mingw64/bin/g++.exe"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+	  "options": {
+		"cwd": "${workspaceFolder}"
+	  },
+      "problemMatcher": ["$gcc"],
+      "windows": {
+        "command": "make",
+        "args": [
+        	"win"
+        ]
+      },
+      "linux": {
+        "command": "make",
+        "args": [
+			"linux"
+        ]
+      },
+      "osx": {
+        "command": "make",
+        "args": [
+			"mac"
+        ]
+      }
+    },
+	{
+      "label": "debug",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+	  "options": {
+		"cwd": "${workspaceFolder}"
+	  },
+      "problemMatcher": ["$gcc"],
+      "windows": {
+        "command": "make",
+        "args": [
+        	"win-debug"
+        ]
+      },
+      "linux": {
+        "command": "make",
+        "args": [
+			"linux-debug"
+        ]
+      },
+      "osx": {
+        "command": "make",
+        "args": [
+			"mac-debug"
+        ]
+      }
+    },
+	{
+      "label": "Clean",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+	  "options": {
+		"cwd": "${workspaceFolder}"
+	  },
+      "problemMatcher": ["$gcc"],
+      "windows": {
+        "command": "make",
+        "args": [
+        	"clean-win"
+        ]
+      },
+      "linux": {
+        "command": "make",
+        "args": [
+			"clean-linux"
+        ]
+      },
+      "osx": {
+        "command": "make",
+        "args": [
+			"clean-mac"
+        ]
+      }
+    },
+  ]
 }
